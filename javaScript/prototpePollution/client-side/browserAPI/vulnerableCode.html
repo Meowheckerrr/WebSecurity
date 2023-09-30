@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="name"></h1>
+</body>
+<script>
+    userA = {
+     name:undefined
+    }    
+
+    async function fetchData(){
+        try{
+            const response = await fetch('./data.json',{
+                contentType:"application/json",
+                Authorization:"meowheckerKey"
+            })
+            const data = await response.json();
+            console.log(data)
+
+            //h1
+            const username = data['x-username']
+            const h1Element = document.querySelector("#name")
+            h1Element.innerHTML = username
+
+            //Get the value from the header
+            const contentType = response.headers.get('Content-Type')
+            console.log('Content-Type:', contentType);
+
+        }catch(error){
+            console.log("Error fetching JSON",error)
+        }
+    }
+    fetchData();
+// Object { "x-username": "meowhecker" }
+// vulnerableCode.html:59:21
+// Content-Type: application/json; charset=UTF-8
+</script>
+</html>

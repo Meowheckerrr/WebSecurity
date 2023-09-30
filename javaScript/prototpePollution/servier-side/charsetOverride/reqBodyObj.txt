@@ -1,0 +1,21 @@
+USER@DESKTOP-QGJ2K9H MINGW64 ~/Desktop/CSIE/WebSecurity (master)
+$ curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "key1=value1&key2=value2" http://127.0.0.1:8001/api/meow
+{"message":"Received data !!"}
+
+body-parser deprecated undefined extended: provide extended option reqBodyObj.js:10:23
+Server is running on port 8001
+http://127.0.0.1:8001
+{ key1: 'value1', key2: 'value2' }
+
+----------------------------------------------------
+
+
+USER@DESKTOP-QGJ2K9H MINGW64 ~/Desktop/CSIE/WebSecurity (master)
+$ curl -X POST -H "Content-Type: application/json" -d '{"name": "John", "age": 30}' http://127.0.0.1:8001/api/meow
+{"message":"Received data !!"}
+
+body-parser deprecated undefined extended: provide extended option reqBodyObj.js:10:23
+Server is running on port 8001
+http://127.0.0.1:8001
+{ key1: 'value1', key2: 'value2' }
+{ name: 'John', age: 30 }

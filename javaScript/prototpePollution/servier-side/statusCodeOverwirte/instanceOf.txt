@@ -1,0 +1,4 @@
+PS C:\Users\USER\Desktop\CSIE\WebSecurity\javaScript\prototpePollution\servier-side\statusCodeOverwirte> node .\instanceOf.js
+true
+true
+true

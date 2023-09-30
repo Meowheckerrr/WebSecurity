@@ -1,0 +1,4 @@
+php .\PHParchie.php
+parse phar file :<?php echo 'meowhecker'; ?>
+Running the php script from the phar file:
+meowhecker

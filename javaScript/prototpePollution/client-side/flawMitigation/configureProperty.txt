@@ -1,0 +1,2 @@
+PS C:\Users\USER\Desktop\CSIE\WebSecurity\javaScript\prototpePollution\flawMitigation>node .\configureProperty.js
+undefined

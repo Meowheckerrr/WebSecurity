@@ -1,0 +1,11 @@
+{
+  'Content-Type': 'application/json',
+  Authorization: 'meowhecker secret-token',
+  testing: undefined
+}
+{
+  'Content-Type': 'application/json',
+  Authorization: 'meowhecker secret-token',
+  testing: undefined
+}
+application/json

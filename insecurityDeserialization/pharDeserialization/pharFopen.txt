@@ -1,0 +1,2 @@
+ php .\pharFopen.php
+<?php echo 'meowhecker'?>

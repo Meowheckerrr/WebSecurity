@@ -1,0 +1,23 @@
+PS C:\Users\USER\Desktop\CSIE\WebSecurity\javaScript\prototpePollution\servier-side\statusCodeOverwirte> node .\createError.js
+Error: Custom Error with Status Code500
+    at createError (C:\Users\USER\Desktop\CSIE\WebSecurity\javaScript\prototpePollution\servier-side\statusCodeOverwirte\createError.js:12:19)
+    at Object.<anonymous> (C:\Users\USER\Desktop\CSIE\WebSecurity\javaScript\prototpePollution\servier-side\statusCodeOverwirte\createError.js:19:16)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)   
+    at node:internal/main/run_main_module:17:47 {
+  status: 500
+}
+Error: Custom Error with Status Code418
+    at createError (C:\Users\USER\Desktop\CSIE\WebSecurity\javaScript\prototpePollution\servier-side\statusCodeOverwirte\createError.js:12:19)
+    at Object.<anonymous> (C:\Users\USER\Desktop\CSIE\WebSecurity\javaScript\prototpePollution\servier-side\statusCodeOverwirte\createError.js:25:16)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)   
+    at node:internal/main/run_main_module:17:47 {
+  status: 418
+}

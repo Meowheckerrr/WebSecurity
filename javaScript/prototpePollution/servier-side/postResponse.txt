@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+...
+
+//if the website have prototype pollution vulnerable
+{
+    "name":"user",
+    "password":"user123",
+    "meow":"hacker"
+}

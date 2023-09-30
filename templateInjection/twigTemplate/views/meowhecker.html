@@ -1,0 +1,15 @@
+Hello, {{name}} you are {{age}}
+
+
+{% if age >15%}
+    you are over the age of 15.<br/>
+{% endif %}
+
+
+{% for user in users %}
+    {{user.name}} is {{user.age}} years old .<br/>
+{% endfor %}
+
+Get the Value from the url 
+
+Url Value: {{badStuff}}

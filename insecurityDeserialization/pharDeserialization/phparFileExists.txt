@@ -1,0 +1,4 @@
+php .\pharFileExists.php
+
+
+Phar 文件中的文件存在。

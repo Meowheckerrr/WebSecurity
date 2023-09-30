@@ -1,0 +1,4 @@
+initial:O:4:"user":2:{s:8:"userName";s:10:"meowhecker";s:8:"password";s:17:"meoweckerPassword";}
+Response:O:4:"user":2:{s:8:"userName";s:10:"meowhecker";s:8:"password";s:17:"meoweckerPassword";}
+unserialize was successfulUser Name: meowhecker Password: meoweckerPassword
+meowhecker meoweckerPassword

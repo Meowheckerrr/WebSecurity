@@ -1,0 +1,12 @@
+PS C:\Users\USER\Desktop\CSIE\WebSecurity\javaScript\prototpePollution\servier-side\vulnerableCodeRCE> node .\mainProcessFork.js
+Debugger listening on ws://127.0.0.1:9926/57a078d8-f94f-4a35-bf5d-49e2c7940d76
+For help, see: https://nodejs.org/en/docs/inspector
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  5224  100  5224    0     0   284k      0 --:--:-- --:--:-- --:--:--  300k
+
+----
+
+PS C:\Users\USER\Desktop\CSIE\WebSecurity\javaScript\prototpePollution\vulnerableCode> node .\mainProcessFork.js
+subMeow received the message form Main process: I'm your father!! MEOW FATHER
+Main process received message from child: subMeow say: hi

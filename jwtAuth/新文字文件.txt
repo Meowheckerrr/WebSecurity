@@ -1,0 +1,1 @@
+git clone --branch <branch name> <URL>

@@ -1,0 +1,8 @@
+PS C:\Users\USER\Desktop\CSIE\WebSecurity\javaScript\prototpePollution\servier-side> node .\forloop.js
+false
+hacker
+---------------------------------------------------
+for...loop
+name
+password
+meow

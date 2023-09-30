@@ -1,0 +1,8 @@
+ C:\Users\USER\Desktop\CSIE\WebSecurity\javaScript\prototpePollution\vulnerableCode ���ؿ�
+
+2023/08/22  �W�� 12:03    <DIR>          .
+2023/08/22  �W�� 12:03    <DIR>          ..
+2023/08/22  �W�� 12:06               259 execSync.js
+2023/08/22  �W�� 12:01               283 vulcode1.js
+               2 ���ɮ�             542 �줸��
+               2 �ӥؿ�   5,373,722,624 �줸�եi��
