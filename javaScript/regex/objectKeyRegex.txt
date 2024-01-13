@@ -1,0 +1,4 @@
+PS C:\Users\USER\Desktop\CSIE\webSecurity\javaScript\regex> node .\objectKeyRegex.js
+^.{0}a.* [ 'apple', index: 0, input: 'apple', groups: undefined ]
+^.{1}a.* null
+^.{1}a.* null

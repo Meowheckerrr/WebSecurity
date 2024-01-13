@@ -1,0 +1,90 @@
+Response { type: "basic", url: "http://127.0.0.1:5500/CORS/AttackPaylaod/AbortController.html", redirected: false, status: 200, ok: true, statusText: "OK", headers: Headers(9), body: ReadableStream, bodyUsed: false }
+AbortController.html:28:25
+--------------------------------------------------- AbortController.html:29:25
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+
+
+    HTML info
+
+
+
+
+
+    <script>
+
+        var abortController = new AbortController()
+
+        
+
+        //obtain the controller signal 
+
+        var signal = abortController.signal
+
+        
+
+        //configure TimeOut
+
+        
+
+        setTimeout(function(){
+
+            abortController.abort();
+
+        },3000)
+
+        
+
+        
+
+        fetch("http://127.0.0.1:5500/CORS/AttackPaylaod/AbortController.html",{signal}).then(
+
+                function(response){
+
+                console.log(response)
+
+                console.log("---------------------------------------------------")
+
+                return response.text()
+
+            }).then(function(data){
+
+                console.log(data)
+
+                return null
+
+                //proccessing Data
+
+            }).catch(function(error){
+
+                if (error.name === "AbortError"){
+
+                    console.log("request abort")
+
+                }else{
+
+                    console.log("Aries Error ")
+
+                }
+
+            }
+
+        )
+
+
+
+        </script>

@@ -14,4 +14,4 @@ $lexer = new \Twig\Lexer($twig, array(
 
 $twig->setLexer($lexer);
 
-echo $twig->render("<html></html>"|raw);
+echo $twig->render("");

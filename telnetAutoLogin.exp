@@ -1,0 +1,16 @@
+#!/usr/bin/expect
+
+set telnet_host "127.0.0.1"
+set telnet_user "user"
+set telnet_password "user"
+
+spawn telnet $telnet_host
+
+expect "login:"
+send "$telnet_user\r"
+
+expect "Password:"
+send "$telnet_password\r"
+
+
+expect eof

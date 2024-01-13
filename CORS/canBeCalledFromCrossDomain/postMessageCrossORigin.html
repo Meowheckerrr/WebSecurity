@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>provide Soruce</title>
+</head>
+<body>
+  <script>
+    window.addEventListener("message", function(event) {
+      if (event.origin === "https://origin.com") {
+        console.log("Received message from oring site: " + event.data);
+      }
+    });
+  </script>
+</body>
+</html>

