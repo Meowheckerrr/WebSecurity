@@ -2,8 +2,8 @@ import re
 import requests
 
 #Target
-url1 = "https://qe.tchcvs.tc.edu.tw/login.asp"  #Grep Valid Code
-url2 = "https://qe.tchcvs.tc.edu.tw/login.asp"  #Login Attemt !
+url1 = "https://Fake1"  #Grep Valid Code
+url2 = "https://Fake2"  #Login Attemt !
 
 # Otions 
 surfix = "@mail.hcsh.tp.edu.tw"   # ajdusting paylod
