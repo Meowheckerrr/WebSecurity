@@ -1,0 +1,27 @@
+
+#Reflect XSS
+#innerHTML
+#http://127.0.0.1:5500/XSS/DOMXSS/vulnCode/innerHtml.html?search=%3CDEtAiLS%09oNPOiNTerenTeR%0A=%0Aa=prompt,a()%0Dx%3E3nd
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="results"></p>
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const search = urlParams.get('search');
+        
+    
+        const results = document.getElementById('results');
+        results.innerHTML = 'You searched for: ' + search;  //Danger Sink
+    </script>
+</body>
+</html>
