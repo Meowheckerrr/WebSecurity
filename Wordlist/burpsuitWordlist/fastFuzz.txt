@@ -1,0 +1,33 @@
+'
+''
+\
+\\
+{base}-0
+{base}*1
+{base}'||'
+{base}'+'
+{base}' '
+"
+""
+{base}"||"
+{base}/*_*/
+'{base}'
+"{base}"
+({base})
+`
+{base}'--
+{base}')-- 
+{base}'))-- 
+{base}'#
+{base}')# 
+{base}'))# 
+{base}' and 'z'='z
+{base}' or 'z'='z
+{base}" or "z"="z
+}}
+${77*77}
+{{77*77}}
+xsstest'"><
+/{base}
+./{base}
+../{base}
