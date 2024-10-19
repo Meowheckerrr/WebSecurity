@@ -1,0 +1,33 @@
+
+
+# Class 
+class User < ApplicationRecord
+    attr_accessor :name, :email, :admin
+  end
+
+
+
+# Controller 
+class UsersController < ApplicationController
+  def create
+    @user = User.new(params[:user])  # 這裡是 auto binding 問題所在
+    if @user.save
+      redirect_to @user, notice: 'User was successfully created.'
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end
+end
+
+
+#Exploit 
+# POST /users
+# Content-Type: application/x-www-form-urlencoded
+
+# user[name]=John&user[email]=john@example.com&user[admin]=true
