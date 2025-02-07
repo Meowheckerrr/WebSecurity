@@ -1,4 +1,4 @@
-#Author: MeowHecker 侯智晟
+#Author: MeowHecker 
 # Bypass 2FA Auth
 import requests
 import threading

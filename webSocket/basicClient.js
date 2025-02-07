@@ -1,0 +1,21 @@
+
+const WebSocket = require('ws');
+const socket = new WebSocket('ws://192.168.137.129:8081');
+// const socket = new WebSocket('wss://127.0.0.1:8081'); // For TLS encryption
+
+socket.addEventListener('open', () => {
+    console.log('WebSocket connection established.');
+    socket.send('Hello Server!');
+});
+
+socket.addEventListener('message', (event) => {
+    console.log('Message from server:', event.data);
+});
+
+socket.addEventListener('close', () => {
+    console.log('WebSocket connection closed.');
+});
+
+socket.addEventListener('error', (error) => {
+    console.error('WebSocket error:', error);
+});

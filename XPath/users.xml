@@ -1,0 +1,23 @@
+<!-- Store User credentials as XML Data  -->
+
+
+<users>
+	<user>
+		<name first="Kaylie" last="Grenvile"/>
+		<id>1</id>
+		<username>kgrenvile</username>
+		<password>P@ssw0rd!</password>
+	</user>
+	<user>
+		<name first="Admin" last="Admin"/>
+		<id>2</id>
+		<username>admin</username>
+		<password>admin</password>
+	</user>
+	<user>
+		<name first="Academy" last="Student"/>
+		<id>3</id>
+		<username>htb-stdnt</username>
+		<password>Academy_student!</password>
+	</user>
+</users>

@@ -1,0 +1,28 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<meowhecker_modules>
+
+<modules>
+    <title>
+    Meowhecker XML
+    </title>
+    <author>Meowhecker</author>
+    <category>offensive</category>
+
+
+</modules>
+
+
+
+<!-- this is a comment -->
+  <module>
+    <title>Attacking Enterprise Networks</title>
+    <author co-author="LTNB0B">meowCat</author>
+    <tier difficulty="medium">2</tier>
+    <category>offensive</category>
+  </module>
+
+
+</meowhecker_modules>
